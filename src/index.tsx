@@ -67,6 +67,14 @@ class GameState {
     return this.tableCards.contains(card);
   }
 
+  get canPlay() {
+    return this.plays > 0 && this.tableCards.size > 0;
+  }
+
+  get canDiscard() {
+    return this.discards > 0 && this.tableCards.size > 0;
+  }
+
   play() {
     const score = this.score + this.tableCards.score;
     const hands = this.hands.filter((card) => !this.tableCards.contains(card));
@@ -197,10 +205,10 @@ const App = () => {
         ))}
       </ul>
       <div>
-        <button onClick={play} disabled={state.plays === 0}>
+        <button onClick={play} disabled={state.canPlay}>
           Play({state.plays})
         </button>
-        <button onClick={discard} disabled={state.discards === 0}>
+        <button onClick={discard} disabled={state.canDiscard}>
           Discard({state.discards})
         </button>
       </div>
