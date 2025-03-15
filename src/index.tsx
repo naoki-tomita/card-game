@@ -197,11 +197,11 @@ const App = () => {
         ))}
       </ul>
       <div>
-        <button onClick={play}>
-          Play
+        <button onClick={play} disabled={state.plays === 0}>
+          Play({state.plays})
         </button>
-        <button onClick={discard}>
-          Discard
+        <button onClick={discard} disabled={state.discards === 0}>
+          Discard({state.discards})
         </button>
       </div>
       <div>
