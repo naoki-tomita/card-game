@@ -205,10 +205,10 @@ const App = () => {
         ))}
       </ul>
       <div>
-        <button onClick={play} disabled={state.canPlay}>
+        <button onClick={play} disabled={!state.canPlay}>
           Play({state.plays})
         </button>
-        <button onClick={discard} disabled={state.canDiscard}>
+        <button onClick={discard} disabled={!state.canDiscard}>
           Discard({state.discards})
         </button>
       </div>

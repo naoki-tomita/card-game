@@ -13,5 +13,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "naoki.tomita <mxcpy608@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite"
+  }
 }
