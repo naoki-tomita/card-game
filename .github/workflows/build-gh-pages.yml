@@ -32,7 +32,7 @@ jobs:
         uses: actions/configure-pages@v5
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "yarn"
       - name: build
         run: yarn && yarn vite build --outDir _site --base /card-game/
