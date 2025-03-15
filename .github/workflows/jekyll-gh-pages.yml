@@ -35,7 +35,7 @@ jobs:
           node-version: 20
           cache: "yarn"
       - name: build
-        run: yarn vite build --outDir _site
+        run: yarn && yarn vite build --outDir _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
