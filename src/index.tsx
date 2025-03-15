@@ -21,7 +21,7 @@ class GameState {
   drawCards() {
     let remains = this.deck;
     let hands = this.hands;
-    while(hands.size < 8) {
+    while(hands.size < 8 && remains.size > 0) {
       const drawed = remains.draw();
       const card = drawed.card;
       remains = drawed.remains;
