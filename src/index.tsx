@@ -71,13 +71,13 @@ class GameState {
     const score = this.score + this.tableCards.score;
     const hands = this.hands.filter((card) => !this.tableCards.contains(card));
     const tableCards = new TableCards([]);
-    return this.copy({ plays: this.plays - 1, score, hands, tableCards }).drawCards();
+    return this.copy({ plays: this.plays - 1, score, hands, tableCards }).drawCards().sort();
   }
 
   discard() {
     const hands = this.hands.filter((card) => !this.tableCards.contains(card));
     const tableCards = new TableCards([]);
-    return this.copy({ discards: this.discards - 1, hands, tableCards }).drawCards();
+    return this.copy({ discards: this.discards - 1, hands, tableCards }).drawCards().sort();
   }
 }
 
